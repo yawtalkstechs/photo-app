@@ -1,3 +1,4 @@
 *.pyc
 *.pot
 __pycache__
+__pycache__/
