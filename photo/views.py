@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import ProfileForms
+from .models import Profile
 
 # Create your views here.
 def home(request):
@@ -10,7 +11,7 @@ def home(request):
 
 		if form.is_valid():
 			form.save()
-			return redirect('success')
+			return render(request, 'photo_page.html', {'profiles': Profile.objects.all()})
 	else:
 		form = ProfileForms()
 	return render(request, 'home.html', {'form' : form})

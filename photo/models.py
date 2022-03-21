@@ -4,4 +4,4 @@ from django.db import models
 class Profile(models.Model):
     name = models.CharField(max_length=100)
     age = models.PositiveIntegerField()
-    image = models.ImageField(upload_to='profile_pics')
+    image = models.ImageField(upload_to='media/profile_pics')
